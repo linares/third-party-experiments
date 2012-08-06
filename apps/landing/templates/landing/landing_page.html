@@ -1,0 +1,38 @@
+{% extends "landing/base.html" %}
+
+{% block extrahead %}
+	<script src="http://platform.twitter.com/anywhere.js?id=ZU6XVnclcgHpQjdqK8zUw&v=1" type="text/javascript"></script>
+{% endblock %}
+
+
+{% block content %}
+
+	<div data-role="page" id="home">
+	
+		<div data-role="content" style="padding: 0;">	
+
+		{% if not user.authenticated %}
+		
+		<button type="button" id="signin-btn">Sign In with Twitter</button>
+		
+		<script>
+			$('#signin-btn').click(function() {
+				window.location.replace('/oauth');
+			});
+		
+		</script>
+		
+		{% else %}
+			
+		
+		
+		{% endif %}
+	
+		{% block inner_content %}{% endblock %}
+			
+		</div>		
+	</div>
+
+{% endblock %}
+
+

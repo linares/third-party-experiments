@@ -1,0 +1,20 @@
+body { margin: 0; padding: 0; font-family: "Trebuchet MS"; }
+
+.wood_back { background-image: url('../images/wood_back.jpg'); }
+
+
+/* Giant green button */
+.green_btn { 
+	width: 10%; padding: 14px 0 14px 0;
+	margin-left:45%;
+	margin-right:45%;
+	margin-top: 10%;
+	background-color: #548900;
+	background: -webkit-gradient(linear, top, bottom, from(#548900), to(#396200));
+	background-image: -webkit-linear-gradient(top, #548900 0%, #396200 100%);
+	background-image: -webkit-gradient(linear, top, bottom, color-stop(0, #548900), color-stop(1, #396200));
+	color: #fff; font-style: italic; font-size: 20px; text-align: center; 
+	text-shadow: 1px 1px #336666;
+	border: 1px solid #375300;
+	-moz-border-radius: 6px; border-radius:6px;
+}

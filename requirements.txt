@@ -1,0 +1,26 @@
+django==1.3
+mysql-python
+python-memcached		# Python-memcached bindings
+south==0.7.5			# SQL schema migration 
+fabric					# Command line tools
+django-countries
+boto==2.3.0				# AWS utils
+django-ses==0.4.1		# Django AWS SES plugin
+django-piston			# Django API framework
+django-debug-toolbar 	# Debug toolbar
+raven==0.7				# Error logging framework
+django-sentry==1.13.5	# Error logging framework (django-plugin)
+#pytz 					# Recommended python timezone lib
+django-storages			# Django storage engine for S3
+xlrd					# Extract data from excel spreadsheets
+python-dateutil==1.5	# Extended date utilities
+twilio					# Sends SMS messages
+urbanairship			# Mobile push notifications
+celery==2.5.1			# Python queue framework
+django-celery==2.5.1	# Allows django to run as a message broker
+kombu==2.1.3			# Also required as part of django-celery
+suds					# SOAP library
+django-picklefield		# Custom django field for pickled objects	
+django-extensions==0.8	# Additional django utils
+oauth
+python-twitter

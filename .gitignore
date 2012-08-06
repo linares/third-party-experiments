@@ -1,0 +1,11 @@
+*.pyc
+ve
+.Python
+.project
+.pydevproject
+.DS_Store
+*.orig
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
