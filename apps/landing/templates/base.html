@@ -1,0 +1,23 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>{% block title %}Social Chew{% endblock %}</title> 
+	
+	{% block jqueryhead %}
+		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+	{% endblock %}
+	
+	<link rel="stylesheet" href="{{ STATIC_URL }}static/css/landing.css" />
+	<link rel="stylesheet" href="{{ STATIC_URL }}static/css/main.css" />
+	
+	{% block extrahead %}{% endblock %}
+	
+</head> 
+
+<body{%block extrabody%}{% endblock %}> 
+	{% block content %}{% endblock %}
+</body>
+
+</html>

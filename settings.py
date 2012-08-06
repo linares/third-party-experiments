@@ -3,6 +3,8 @@
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+ROOT_URL = 'http://127.0.0.1:8000'
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )

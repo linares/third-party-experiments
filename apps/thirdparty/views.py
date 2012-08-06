@@ -9,7 +9,7 @@ from urlparse import parse_qs
 import twitter
 import oauth2 as oauth
 from models import UserProfile
-from settings import TWITTER_CONSUMER_SECRET
+import settings
 
 
 def home(request):
@@ -49,7 +49,11 @@ def twitter_signed_in(request):
     user_id = parse_qs(content)['user_id'][0]
     screen_name = parse_qs(content)['screen_name'][0]
     
-    api = twitter.Api(consumer_key=settings.TWITTER_CONSUMER_KEY,consumer_secret=TWITTER_CONSUMER_SECRET, access_token_key=access_token, access_token_secret=access_token_secret)
+    api = twitter.Api(consumer_key=settings.TWITTER_CONSUMER_KEY,
+                      consumer_secret=settings.TWITTER_CONSUMER_SECRET, 
+                      access_token_key=access_token,
+                      access_token_secret=access_token_secret)
+    
     twitter_user = api.GetUser(user_id)
     
     try:
@@ -81,4 +85,4 @@ def twitter_signed_in(request):
     print 'user should now be authenticated and logged in'
     
     
-    return HttpResponse("Welcome, ")
+    return redirect(settings.ROOT_URL)
