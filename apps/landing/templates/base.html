@@ -9,15 +9,17 @@
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
 	{% endblock %}
 	
-	<link rel="stylesheet" href="{{ STATIC_URL }}static/css/landing.css" />
-	<link rel="stylesheet" href="{{ STATIC_URL }}static/css/main.css" />
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/landing.css" />
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
 	
 	{% block extrahead %}{% endblock %}
 	
 </head> 
 
 <body{%block extrabody%}{% endblock %}> 
-	{% block content %}{% endblock %}
+	<section id="content">
+		{% block content %}{% endblock %}
+	</section>
 </body>
 
 </html>

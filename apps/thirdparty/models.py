@@ -85,6 +85,16 @@ class UserProfile(models.Model):
         self.twitter_access_token_secret = access_token_secret
     
    
+   
+class Tweet(models.Model):
+ 
+    #twitter identity
+    tweet_id = models.CharField(max_length=200, null=False, blank=False, unique=True)
+    twitter_screen_name = models.CharField(max_length=200, null=False, blank=False, unique=True)
+    twitter_profile_img = models.CharField(max_length=200, null=False, blank=False)
+
+ 
+   
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         UserProfile.objects.create(user=instance)

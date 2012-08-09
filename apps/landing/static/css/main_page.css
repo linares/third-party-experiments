@@ -1,6 +1,5 @@
 .item {
 	width: 220px;
-
 	margin: 5px;
 	padding: 5px;
 	background: #D8D5D2;
@@ -10,4 +9,29 @@
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+}
+
+#infscr-loading {
+	text-align: center;
+	z-index: 100;
+	position: fixed;
+	left: 45%;
+	bottom: 40px;
+	width: 200px;
+	padding: 10px;
+	background: black;
+	opacity: 0.8;
+	color: white;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.transitions-enabled.masonry,.transitions-enabled.masonry .masonry-brick
+	{
+	-webkit-transition-duration: 0.7s;
+	-moz-transition-duration: 0.7s;
+	-ms-transition-duration: 0.7s;
+	-o-transition-duration: 0.7s;
+	transition-duration: 0.7s;
 }

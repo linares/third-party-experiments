@@ -1,38 +1,66 @@
 {% extends "base.html" %}
 
 {% block extrahead %}
-	<script src="{{STATIC_URL}}static/js/jquery.masonry.min.js"></script>
-	<script src="{{STATIC_URL}}static/js/jquery.infinitescroll.min.js"></script>
-	<link rel="stylesheet" href="{{ STATIC_URL }}static/css/main_page.css" />
+	<script src="{{STATIC_URL}}js/jquery.masonry.min.js"></script>
+	<script src="{{STATIC_URL}}js/jquery.infinitescroll.min.js"></script>
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/main_page.css" />
 {% endblock %}
 
 
 {% block content %}
 
-<script>
-$(function(){
-	  $('#container').masonry({
-	    // options
-	    itemSelector : '.item',
-	    columnWidth : 240
-	  });
-	});
-</script>
 
 <div data-role="page" id="home">
-	
 		<div data-role="content" style="padding: 0;">	
 		
-			<div id="container">
+			<div id="container" class="">
 				{% for tweet in timeline %}
 					<div class="item"> {{ tweet.text }}</div>
 				{% endfor %}
 				
 				
 			</div>
+			
+		</div>
 		
-		</div>		
-	</div>
+		
+		<nav id="page-nav" style="display: none; ">
+			  <a href="/landing/pages/2.html"></a>
+		</nav>		
+		
+		<script>
+		$(function(){
+			  
+			var $container = $('#container');
+			
+			$container.imagesLoaded(function() {
+				$container.masonry({
+			    // options
+			    itemSelector : '.item',
+			    columnWidth : 140,
+			  }).infinitescroll({
+					 	navSelector: '#page-nav', // selector for the paged navigation      
+						nextSelector : '#page-nav a',  // selector for the NEXT link (to page 2)      
+						itemSelector : '.item',     // selector for all items you'll retrieve      
+						loading: {finishedMsg: 'No more pages to load.', img: 'http://i.imgur.com/6RMhx.gif'} ,
+						debug		 	: true,
+						dataType	 	: 'html',
+					},
+					
+				  // trigger Masonry as a callback
+				  function( newElements ) {
+					 console.log('scrolling');
+				    var $newElems = $( newElements );
+				    $container.masonry( 'appended', $newElems );
+				  }
+				);
+			});
+			
+			}); 
+		</script>
+</div>
+
+
 
 
 {% endblock %}
